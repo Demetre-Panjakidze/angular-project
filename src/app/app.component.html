@@ -27,18 +27,21 @@
         <p>To-do</p>
       </div>
       <div class="content">
-        <p class="empty empty-1" *ngIf="true">List is empty</p>
+        <p class="empty empty-1" *ngIf="message1">{{ message }}</p>
         <ul>
-          <li class="item" *ngFor="let task of tasks_and_levels; let i = index">
+          <li
+            class="item"
+            *ngFor="let task of start_tasks_and_levels; let i = index"
+          >
             <div class="task">
               <p>
                 <span>{{ i + 1 }}.</span> {{ task[0] }}
               </p>
               <div class="innerBox">
-                <button (click)="rightTransfer(i)" class="next">></button>
+                <button (click)="addRight1(i)" class="next">></button>
                 <button (click)="deleteLi(i)" class="delete">x</button>
               </div>
-              <div *ngFor="let level of tasks_and_levels" class="bottom">
+              <div *ngFor="let level of start_tasks_and_levels" class="bottom">
                 {{ level[1] }}
               </div>
             </div>
@@ -51,18 +54,21 @@
         <p>In progress</p>
       </div>
       <div class="content">
-        <p class="empty empty-2" *ngIf="true">List is empty</p>
+        <p class="empty empty-2" *ngIf="message2">{{ message }}</p>
         <ul>
-          <li class="item" *ngFor="let task of tasks_and_levels; let i = index">
+          <li
+            class="item"
+            *ngFor="let task of middle_tasks_and_levels; let i = index"
+          >
             <div class="task">
               <p>
                 <span>{{ i + 1 }}.</span> {{ task[0] }}
               </p>
               <div class="innerBox">
-                <button (click)="leftTransfer(i)" class="new-left">&lt;</button>
-                <button (click)="middleRightTransfer(i)" class="next">></button>
+                <button (click)="addLeft1(i)" class="new-left">&lt;</button>
+                <button (click)="addRight2(i)" class="next">></button>
               </div>
-              <div *ngFor="let level of tasks_and_levels" class="bottom">
+              <div *ngFor="let level of middle_tasks_and_levels" class="bottom">
                 {{ level[1] }}
               </div>
             </div>
@@ -75,17 +81,20 @@
         <p>Done</p>
       </div>
       <div class="content">
-        <p class="empty empty-3" *ngIf="true">List is empty</p>
+        <p class="empty empty-3" *ngIf="message3">{{ message }}</p>
         <ul>
-          <li class="item" *ngFor="let task of tasks_and_levels; let i = index">
+          <li
+            class="item"
+            *ngFor="let task of end_tasks_and_levels; let i = index"
+          >
             <div class="task">
               <p>
                 <span>{{ i + 1 }}.</span> {{ task[0] }}
               </p>
               <div class="innerBox">
-                <button (click)="endLeftTransfer(i)" class="new-left">&lt;</button>
+                <button (click)="addLeft2(i)" class="new-left">&lt;</button>
               </div>
-              <div *ngFor="let level of tasks_and_levels" class="bottom">
+              <div *ngFor="let level of end_tasks_and_levels" class="bottom">
                 {{ level[1] }}
               </div>
             </div>
@@ -95,12 +104,3 @@
     </div>
   </div>
 </div>
-
-<!-- <button class="newBtn" (click)="toggle()">click me</button>
-<div class="newDiv" *ngIf="show">hello</div>
-
-<ul>
-  <li [ngClass]="getItemClass(i+1)" *ngFor="let x of animals; let i = index">
-    <span *ngIf = "i % 2 == 0">{{ i + 1 }}.</span> {{ x }}
-  </li>
-</ul> -->

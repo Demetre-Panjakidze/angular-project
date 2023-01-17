@@ -95,6 +95,7 @@ h6 {
 
   .container {
     display: flex;
+    align-items: flex-start;
     gap: 20px;
 
     .child-container {
@@ -195,17 +196,3 @@ h6 {
     }
   }
 }
-
-// .newBtn, .newDiv {
-//   margin: 20px 0 0;
-// }
-
-// .red {
-//   background: red;
-//   color: white;
-// }
-
-// .blue {
-//   background: blue;
-//   color: white;
-// }
