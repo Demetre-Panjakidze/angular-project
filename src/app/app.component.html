@@ -1,26 +1,5 @@
 <div class="main">
-  <form>
-    <input
-      [(ngModel)]="taskName"
-      type="text"
-      name="task-name"
-      class="form-component"
-      id="taskName"
-      placeholder="Task Name"
-    />
-    <select
-      [(ngModel)]="selectedOption"
-      name="selection"
-      class="form-component"
-      id="selection"
-    >
-      <option value="" disabled selected>Select</option>
-      <option value="easy">easy</option>
-      <option value="medium">medium</option>
-      <option value="hard">hard</option>
-    </select>
-    <button (click)="addTask()" class="form-component">Add</button>
-  </form>
+  <app-add-task (taskAdd)="tasksAddHandler($event)"></app-add-task>
   <div class="container">
     <div class="child-container left">
       <div class="title">
@@ -36,14 +15,14 @@
           >
             <div class="task">
               <p>
-                <span>{{ i + 1 }}.</span> {{ task[0] }}
+                <span>{{ i + 1 }}.</span> {{ task.taskName }}
               </p>
               <div class="innerBox">
                 <button (click)="addRight1(i)" class="next">></button>
                 <button (click)="deleteLi(i)" class="delete">x</button>
               </div>
-              <div *ngFor="let level of start_tasks_and_levels" class="bottom">
-                {{ level[1] }}
+              <div class="bottom">
+                {{ task.difficulty }}
               </div>
             </div>
           </li>

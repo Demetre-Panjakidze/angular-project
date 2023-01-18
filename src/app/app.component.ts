@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
 
-function capitalize(s: string) {
-  return s[0].toUpperCase() + s.slice(1);
-}
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,6 +7,11 @@ function capitalize(s: string) {
 })
 export class AppComponent {
   start_tasks_and_levels: any[] = [];
+
+  tasksAddHandler(obj: any){
+    this.start_tasks_and_levels.push(obj)
+  };
+
   middle_tasks_and_levels: any[] = [];
   end_tasks_and_levels: any[] = [];
 
@@ -18,21 +19,6 @@ export class AppComponent {
   message1: unknown = true;
   message2: unknown = true;
   message3: unknown = true;
-  taskName: string = '';
-  selectedOption: string = '';
-  options: string[] = ['easy', 'medium', 'hard'];
-
-  addTask = () => {
-    if (this.taskName && this.options.includes(this.selectedOption)) {
-      this.start_tasks_and_levels.push([
-        this.taskName,
-        capitalize(this.selectedOption),
-      ]);
-      this.taskName = '';
-      this.selectedOption = '';
-      this.message1 = false;
-    }
-  };
 
   deleteLi = (index: number) => {
     this.start_tasks_and_levels = this.start_tasks_and_levels.filter(

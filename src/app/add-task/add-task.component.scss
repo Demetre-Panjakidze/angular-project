@@ -1,0 +1,17 @@
+form {
+  display: flex;
+  gap: 20px;
+
+  .form-component {
+    border-radius: 3px;
+    padding: 7px;
+    border: 1px solid gray;
+  }
+
+  button {
+    background-color: blue;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+}

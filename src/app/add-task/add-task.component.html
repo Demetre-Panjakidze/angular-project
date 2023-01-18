@@ -1,0 +1,22 @@
+<form>
+  <input
+    [(ngModel)]="taskName"
+    type="text"
+    name="task-name"
+    class="form-component"
+    id="taskName"
+    placeholder="Task Name"
+  />
+  <select
+    [(ngModel)]="selectedOption"
+    name="selection"
+    class="form-component"
+    id="selection"
+  >
+    <option value="" disabled selected>Select</option>
+    <option value="easy">easy</option>
+    <option value="medium">medium</option>
+    <option value="hard">hard</option>
+  </select>
+  <button (click)="addTask()" class="form-component">Add</button>
+</form>
