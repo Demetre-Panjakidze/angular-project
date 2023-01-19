@@ -1,4 +1,4 @@
 <div class="main">
   <app-add-task (taskAdd)="tasksAddHandler($event)" />
-  <app-task-list [start_tasks_and_levels]="start_tasks_and_levels" />
+  <app-task-list [start_tasks_and_levels]="start_tasks_and_levels" (delete)="tasksDeleteHandler($event)"/>
 </div>

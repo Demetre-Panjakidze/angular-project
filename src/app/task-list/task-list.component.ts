@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { capitalize } from '../app.component';
 
 @Component({
@@ -12,17 +12,12 @@ export class TaskListComponent {
   message2: unknown = true;
   message3: unknown = true;
   @Input() start_tasks_and_levels: any[] = [];
+  @Output() delete = new EventEmitter<number>();
   middle_tasks_and_levels: any[] = [];
   end_tasks_and_levels: any[] = [];
   
-  
   deleteLi = (index: number) => {
-    this.start_tasks_and_levels = this.start_tasks_and_levels.filter(
-      (_: unknown, i: unknown) => index !== i
-    );
-    if (!this.start_tasks_and_levels.length) {
-      this.message1 = this.message;
-    }
+    this.delete.emit(index);
   };
 
   addRight1 = (index: number) => {
