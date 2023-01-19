@@ -16,4 +16,3 @@ export class AppComponent {
     this.start_tasks_and_levels.push(obj);
   }
 }
-

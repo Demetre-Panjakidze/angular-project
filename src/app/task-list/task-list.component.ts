@@ -15,9 +15,7 @@ export class TaskListComponent {
   middle_tasks_and_levels: any[] = [];
   end_tasks_and_levels: any[] = [];
   
-  tasksAddHandler1(elem: any) {
-    console.log(elem);
-  }
+  
   deleteLi = (index: number) => {
     this.start_tasks_and_levels = this.start_tasks_and_levels.filter(
       (_: unknown, i: unknown) => index !== i
