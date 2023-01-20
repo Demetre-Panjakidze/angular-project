@@ -5,7 +5,7 @@
       <p>To-do</p>
     </div>
     <div class="content">
-      <p class="empty empty-1" *ngIf="message1">{{ message }}</p>
+      <p class="empty empty-1" *ngIf="!start_tasks_and_levels.length">{{ message }}</p>
       <ul>
         <li
           class="item"
@@ -33,7 +33,7 @@
       <p>In progress</p>
     </div>
     <div class="content">
-      <p class="empty empty-2" *ngIf="message2">{{ message }}</p>
+      <p class="empty empty-2" *ngIf="!middle_tasks_and_levels.length">{{ message }}</p>
       <ul>
         <li
           class="item"
@@ -61,7 +61,7 @@
       <p>Done</p>
     </div>
     <div class="content">
-      <p class="empty empty-3" *ngIf="message3">{{ message }}</p>
+      <p class="empty empty-3" *ngIf="!end_tasks_and_levels.length">{{ message }}</p>
       <ul>
         <li
           class="item"

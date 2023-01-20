@@ -8,7 +8,7 @@ import { capitalize } from '../app.component';
 })
 export class AddTaskComponent {
   message1: unknown;
-  taskName: unknown;
+  taskName: string | undefined;
   selectedOption: string = '';
   options: string[] = ['easy', 'medium', 'hard'];
 
